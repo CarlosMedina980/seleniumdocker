@@ -1,7 +1,0 @@
-com\selenium\docker\RegistrationConfirmationPage.class
-com\selenium\docker\RegistrationPage.class
-com\selenium\docker\FlightDetailsPage.class
-com\selenium\docker\FlightConfirmationPage.class
-com\selenium\docker\FindFlightPage.class
-com\searchmodule\pages\SearchPage.class
-com\selenium\docker\BasePage.class

@@ -1,4 +1,6 @@
-FROM openjdk:18.0.2-jdk-oracle
+FROM openjdk:18-jdk-alpine3.15
+
+RUN apk add curl jq
 
 # Workspace
 WORKDIR /usr/share/udemy
@@ -13,4 +15,7 @@ ADD target/libs libs
 ADD book-flight-module.xml  book-flight-module.xml
 ADD search-module.xml   search-module.xml
 
-ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG  $MODULE
+# ADD healtcheck script
+ADD healthcheck.sh    healthcheck.sh
+
+ENTRYPOINT sh healthcheck.sh

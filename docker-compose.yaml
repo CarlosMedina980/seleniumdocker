@@ -21,3 +21,14 @@ services:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+  search-module:
+    image: cajameve980/seleniumdocker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - MODULE=search-module.xml
+    volumes:
+      - ./search-result:/usr/share/udemy/test-output

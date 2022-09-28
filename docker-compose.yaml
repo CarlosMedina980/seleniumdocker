@@ -21,7 +21,18 @@ services:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-  search-module:
+  search-module1:
+    image: cajameve980/seleniumdocker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - MODULE=search-module.xml
+    volumes:
+      - ./search-result1:/usr/share/udemy/test-output
+  search-module2:
     image: cajameve980/seleniumdocker
     depends_on:
       - chrome
@@ -31,4 +42,26 @@ services:
       - HUB_HOST=hub
       - MODULE=search-module.xml
     volumes:
-      - ./search-result:/usr/share/udemy/test-output
+      - ./search-result2:/usr/share/udemy/test-output
+  book-flight-module1:
+    image: cajameve980/seleniumdocker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - MODULE=book-flight-module.xml
+    volumes:
+      - ./book-flight1:/usr/share/udemy/test-output
+  book-flight-module2:
+    image: cajameve980/seleniumdocker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - MODULE=book-flight-module.xml
+    volumes:
+      - ./book-flight2:/usr/share/udemy/test-output

@@ -33,3 +33,7 @@ docker run -e HUB_HOST=192.168.1.16 -e MODULE=search-module.xml cajameve980/sele
 Run tests form Docker container:
 
 docker run -d -e HUB_HOST=192.168.1.16 -e MODULE=search-module.xml -v   -v C:\Users\cajam\Documents\QAAutomation\Output:/usr/share/udemy/test-output cajameve980/seleniumdocker 
+
+Running test from docker compose file
+
+docker-compose up --scale firefox=4 --scale chrome=4  

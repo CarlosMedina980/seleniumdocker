@@ -21,11 +21,11 @@ public class BaseTest {
     public void setupDriver(ITestContext ctx) throws MalformedURLException {
 
         //Local Execution Driver
-        /*System.setProperty("webdriver.chrome.driver", "C:\\Users\\cajam\\Documents\\QA Automation\\SeleniumDockerFramework\\seleniumdocker\\src\\main\\java\\Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\cajam\\Documents\\QAAutomation\\SeleniumDockerFramework\\seleniumdocker\\src\\main\\java\\Drivers\\chromedriver.exe");
         this.driver = new ChromeDriver();
-        this.driver.manage().window().maximize();*/
+        this.driver.manage().window().maximize();
 
-        //Selenium grid remote driver
+       /* //Selenium grid remote driver
         String host = "192.168.1.16";
         MutableCapabilities dc;
 
@@ -44,7 +44,7 @@ public class BaseTest {
 
         String completeUrl = "http://" + host + ":4444/wd/hub";
         dc.setCapability("name", testName);
-        this.driver = new RemoteWebDriver(new URL(completeUrl), dc);
+        this.driver = new RemoteWebDriver(new URL(completeUrl), dc);*/
     }
 
     @AfterTest

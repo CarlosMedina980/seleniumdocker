@@ -36,4 +36,8 @@ docker run -d -e HUB_HOST=192.168.1.16 -e MODULE=search-module.xml -v   -v C:\Us
 
 Running test from docker compose file
 
-docker-compose up --scale firefox=4 --scale chrome=4  
+docker-compose up --scale firefox=4 --scale chrome=4
+
+Running Jenkins Container
+
+docker run -d -p 8080:8080 -p 50000:50000 -v C:\Users\cajam\Documents\QAAutomation\Jenkins:/var/jenkins_home jenkins/jenkins
